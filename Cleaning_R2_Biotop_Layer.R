@@ -49,22 +49,6 @@ df6_ok <- cbind(df6_Biotop1_Percent_gsub,
          df6)
 
 
-df1<-separate_wider_delim(
-  data = df,
-  cols = c(Biotop1,Biotop2),
-  delim = " ",
-  names = " ",
-  names_sep = "_Percent",
-  names_repair = "check_unique",
-  cols_remove = FALSE
-)
 
-df1<-separate_wider_delim(
-  data = df,
-  cols = c(Biotop1,Biotop2,Biotop3,Biotop4,Biotop5,Biotop6),
-  delim = " ",
-  names = " ",
-  names_sep = "_Percent",
-  names_repair = "check_unique",
-  cols_remove = FALSE
-)
+
+
