@@ -56,26 +56,29 @@ df6_remove <-dplyr::select(df6_ok, -c("none2", "none3", "none4", "none5", "none6
 df6_remove2 <-dplyr::select(df6_remove, -c("Biotop1_Percent", "Biotop2_Percent", "Biotop3_Percent", "Biotop4_Percent", "Biotop5_Percent", "Biotop6_Percent"))
 
 ## Step 2: turn it from wide format to long format ----
-wide_df <- data.frame(
-  ID = c(1, 2, 3),
-  Name = c("Ali", "Boby", "Charles"),
-  Test1 = c(85, 90, 92),
-  Test2 = c(88, 89, 95),
-  Test3 = c(82, 87, 91)
-)
-print(wide_df)
-names(df6_remove2)
-# Reshape data from wide to long format using base R ----
 long_df6_3 <- reshape(df6_remove2, dir = 'long', varying = lapply(c('Percent_ok','Descrip'), grep, names(df6_remove2)), timevar = 'Order')
 names(long_df6_3)[names(long_df6_3) == 'Biotop1_Percent_ok'] <- 'Perc_Cover'
 names(long_df6_3)[names(long_df6_3) == 'Biotop1_Descrip'] <- 'Biotop'
 names(long_df6_3)
 
+## Step 3: calculate percentage cover of R2_2, R2_3 nd R2_4 biotop ----
+long_df6_3[13] <- lapply(long_df6_3[13], as.numeric)
+
+long_df6_3$Perc_Cover[is.na(long_df6_3$Perc_Cover)] <- 0
+
+R2_sum <- long_df6_3 %>%
+  group_by(id) %>%
+  filter(Biotop == c("R2.2","R2.3","R2.4")) %>%
+  summarise(R2_Perc_Cover = sum(Perc_Cover))
+  
+R2_merged <- merge(long_df6_3, R2_sum, all = TRUE)
 
 
+# Make histogram ----------------------------------------------------------
 
-
-
+ggplot(R2_merged, aes(R2_Perc_Cover)) +
+  geom_histogram(bins = 10) +
+  stat_bin(aes(y=after_stat(count), label=..count..), geom="text", vjust=-.5, bins = 10) 
 
 
 library(dplyr)
@@ -90,6 +93,7 @@ df6_ok %>%
   gather(Biotop, Percentage) %>%
   mutate(Biotop = parse_number(Biotop)
          , Percentage = parse_number(Percentage))
+
 
 
 r_biotop_count<- r_biotop %>% 
