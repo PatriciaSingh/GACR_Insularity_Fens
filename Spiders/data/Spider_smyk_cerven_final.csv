@@ -1,61 +1,62 @@
 ORIGINAL_LOC,LOC_Plot,LOC,Plot,Aculepeira ceropegia,Agyneta rurestris,Araeoncus humilis,Araneus quadratus,Araneus sturmi,Araniella cucurbitina,Argiope bruennichi,Attulus caricis,Attulus floricola,Clubiona lutescens,Clubiona phragmitis,Clubiona reclusa,Clubiona stagnatilis,Cnephalocotes obscurus,Dictyna arundinacea,Dipoena melanogaster,Dismodiscus bifrons,Dismodiscus elevatus,Dolomedes sp. juv.,Enoplognatha ovata,Entelecara flavipes,Erigone atra,Erigone dentipalpis,Evarcha arcuata,Evarcha falcata,Heliophanus cupreus,Heliophanus flavipes,Hypomma cornutum,Hypsosinga heri,Hypsosinga pygmaea,Hypsosinga sanguinea,Larinioides cornutus,Lasaeola tristis,Linyphia triangularis,Mangora acalypha,Marpissa radiata,Maso sundevalli,Microlinyphia pusilla,Micrommata virescens,Misumena vatia,Neottiura bimaculata,Neriene radiata,Oxyopes ramosus,Ozyptila trux,Pachygnatha listeri,Philodromus albidus,Philodromus aureolus,Philodromus collinus,Phylloneta impressa,Pisaura mirabilis,Platnickina tincta,Robertus arundineti,Synema globosum,Tenuiphantes tenuis,Tetragnatha extensa,Tetragnatha montana,Tetragnatha nigrita,Tetragnatha obtusa,Tetragnatha pinicola,Theridiosoma gemmosum,Tibellus maritimus,Tibellus oblongus,Trematocephalus cristatus,Walckenaeria furcillata,Xysticus bifasciatus,Xysticus cristatus,Xysticus ulmi,Zora spinimana
-Babín A,BBN_A,BBN,A,,,,,,,1,,,,,,,,,,,,,,,,,3,,,,,,,,,,,,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Babín B,BBN_B,BBN,B,,,,,,,,,,,,,,,1,,,,,,,,,2,,,,,,,,,,,,,1,,,1,,,,,,,,,1,,,,,,,,,,,,,,,,,,,
-Bahna A,BHN_A,BHN,A,,,,,,,,,,,,,,,,,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,10,,,1,,,2,,,,,,,,,,,,,
-Bahna B,BHN_B,BHN,B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,4,,,,,,,,,,,,,
-Bazantka A,BZN_A,BZN,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,4,,,,,,,,,,,,,,2,,,,,,2,,1,,,,,,,,,,,
-Bazantka B,BZN_B,BZN,B,,,,,,,1,,,,,,,,,,,,,,,,,3,,,,,,2,,1,,,,,,,,,,,,,,,,,,,,,,,1,,2,,,,,,,,,,,
-Borky A,BRK_A,BRK,A,,,,,,,3,,,,,,,,,,,,,,,,,,,,,,,2,,,,,,,,,,,,,,,,,,,5,,,,,,2,,,,,,,,1,,,,,
-Borky B,BRK_B,BRK,B,,,,,1,,,,,,,,,,,,,,,,,,,,,,,,,1,1,,,,,,,,,,1,,,,,,1,,2,,,,,,5,,,,,,,,,,,,,
-Dvo?išt? A,DVR_A,DVR,A,,,,,,,1,,1,,,,,,,,,,,,,,,2,,,,,,1,,1,,,2,,,,,,,,,,,,,,2,,,1,,,2,,,,,,,1,,,,,,
-Dvo?išt? B,DVR_B,DVR,B,,,,,,,3,,,,,,,,,,,,1,,,,,7,,1,,,,,,,,,,,,,2,,,,,,,,,,,1,,,,,,,,,,,,,,,,,,
-Hliní? A,HLN_A,HLN,A,,,,,,,,,,,,,,,,,,,4,,,,,2,,,,,,,,,,,,,,,,,,,,,,,,,,1,,,,,,1,,,,,,2,1,,,,1,
-Hliní? B,HLN_B,HLN,B,,,,,,,,,,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,,,,1,,,,,,,,,,1
-Hovízna A,HVZ_A,HVZ,A,,,,,,1,3,,,,,,,,,,,,2,,,,,4,,,,,,,,,,,,,,,,,1,,,,,1,,,,,,,,,,,,,,,,,,,,,,
-Hovízna B,HVZ_B,HVZ,B,,,,,,,,,,,,,,,,,,,3,,,,,7,,,,,,,,,,3,,,,,,,1,,,1,,,,,,2,,,,,1,,,,,,,,,,,,,
-Hráde?ek A,HRD_A,HRD,A,,,,,,,3,,,,,,,,,,,,,,,1,,1,,,,,,,,,,,1,,,,,,,,,,,,,,,1,,,,,,,,,,,,,,,,,,
-Hráde?ek B,HRD_B,HRD,B,,,,,,,1,,,,,,,,,,,,,,,,,,,,,,1,2,,,,,,,,,,,1,,,,,,,,1,,,,,,,,,,,,,1,,,,,,
-Hrachovišt? A,HRC_A,HRC,A,,1,,,,,2,,1,,,,,,,,,,,,,,,1,,,,,1,,,,,,,,,,,,,,,,,,,,1,,,,,,3,,,,,,,,,,,,,
-Hrachovišt? B,HRC_B,HRC,B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Chvojnov A,CHV_A,CHV,A,,1,,,,1,,,,,,,,,,,,,,,,,,,,,,,,,1,,,,1,,,,,,,,,,,,,,5,,,,,,2,,,,,,,,,,,,,
-Chvojnov B,CHV_B,CHV,B,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,3,,,,1,,,,,,,,,,,,,,5,,,,,,1,,,,,,,,,,,2,,
-Kališt? A,KLS_A,KLS,A,,,,2,,,5,,,,,,,,,,,,,,,,,,,,,,,,,,,,2,,,,,,,,,,,,,,2,,,,,,1,,,,,,,,,,,1,,
-Kališt? B,KLS_B,KLS,B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2,,,,,,,,,,,,,,,,,2,,,,,,8,,,,,,,,,,,,,
-Kocanda A,KCD_A,KCD,A,,2,,1,,1,2,,,,,,,,1,,,,,,,,,3,,1,1,,,,,,,,,,,,,,,,,,1,,,,,,,,,,,,,,,,,,,,,,,
-Kocanda B,KCD_B,KCD,B,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,,,,,,1,,,,,,,,,,,,,
-Kukla A,KKL_A,KKL,A,,,,,,,,,,,,,,,,,,,3,,,,,,2,,,,,,,,,5,,,15,,,,,,,,,,,,,,,,,,1,,,,,,,,,,,,,
-Kukla B,KKL_B,KKL,B,,,,,,,,,,,,,,,,1,,,1,,,,,3,,,,1,,1,,,,,1,,31,,,1,,,,,,,,,,1,,,,,,,,,,,3,,,,,,,
-Louky u ?. lesa A,LCL_A,LCL,A,,,1,,,,,,1,,,,,,,,,,,,,,,,,,,,,,,,,,1,,,,,,,,,,,,,,,,,,,,2,,,,,,,,1,,,,,
-Louky u ?. lesa B,LCL_B,LCL,B,,,,,,,,,1,,,,,,,,,,,,,,,,,,,,,,,,,,1,,,,,,,,,,,,,,,,,,,,1,,,,,,,,,,,,,
-Louky v Jeníkov? A,LVJ_A,LVJ,A,,,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,5,,1,,,,,,,,,,,,,,,,,
-Louky v Jeníkov? B,LVJ_B,LVJ,B,,1,,,,,,,,,,,1,,,,,,,,,,,,,,,,1,,,,,,2,,,,,,,,,,,,,,1,,,,,,,,,,,,,,1,,,,,
-Nad Svitákem A,NSV_A,NSV,A,,1,1,,,,,,,,,,,,,,,,,,,,,1,,,,,,,,,,,2,,,,,,,,,,,,,,2,,,,,,6,,,,,,,,1,,,1,,
-Nad Svitákem B,NSV_B,NSV,B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Na oklice A,OKL_A,OKL,A,,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,3,,,,,,1,,,,,,,,6,,,,,,,,,,,,,,,,,,,
-Na oklice B,OKL_B,OKL,B,,,,,,,,1,,,,,,,,,,,,,,,,1,,,,,,,,,,,1,,,,,,,,,,,,,,12,1,,,,,,,,,,,,,,,,,,
-Návesník A,NVS_A,NVS,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Návesník B,NVS_B,NVS,B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Pa?ez A,PRZ_A,PRZ,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Pa?ez B,PRZ_B,PRZ,B,,,,,,,,,,,,,,,,,,,,,,,,1,,,,,,,,,,,,,,,,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Pod kam. vrchem A,PKV_A,PKV,A,1,,,,,,6,1,,,,,,,1,,,,,,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,2,,,,,,,,,,,,,,,,,,2,
-Pod kam. vrchem B,PKV_B,PKV,B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,1,,,
-Rataj.ryb. A,RTR_A,RTR,A,,,,,1,,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,,,,,,,,,,,,,,1,,,,,,5,,,,,,,,,,,,,
-Rataj.ryb. B,RTR_B,RTR,B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,,
-Sta?. rybník A,STR_A,STR,A,,,1,,,,4,,,,,,,,,,,,1,,,,,4,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,,1,,,,,,,,,,,,1,
-Sta?. rybník B,STR_B,STR,B,,,,,,,2,,,,,,,,,,,,1,,,,,2,,,,,,,,,2,,,,,,,,,,,,,,,,1,,,,,,1,,,,,,,,,,,,,1
-Starý vdovec A,SVD_A,SVD,A,,,,,,,,,,,,,,,,,,,2,,,,,3,,,,,,1,,,,,,,1,,,,,1,,,,,,,,,,,,,,,,,,1,,,,,,,,
-Starý vdovec B,SVD_B,SVD,B,,,,,,,2,,,,,,,,,,,,1,,,,,10,,,,,,,,,,,,,4,,2,,,1,,,,,,,,3,,1,,,,,,,,,1,,,,,,1,
-Šafranice A,SFR_A,SFR,A,,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,,,,,,,,,,,,,1,1,,,,,,,,,,,,,,,,,,,
-Šafranice B,SFR_B,SFR,B,,,,,,,,,,,,1,,,,,,,,,,,1,2,,,,,,,,,,,1,,,,,,,,,,,,,,2,,,,,,,,,,1,,,,,,,,,
-V Lísovech A,VLS_A,VLS,A,,,,,,,1,,,,,,,,,,,,,,,,,1,,,,,,,,1,,,,,,,2,,,,,,,,,,4,1,,,,1,2,,1,,,,,,,,,,,
-V Lísovech B,VLS_B,VLS,B,,,,,,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,1,,,,,3,,,,,,,,,,,,,
-V Rájích A,VRJ_A,VRJ,A,,,,,,,1,,,,,,,,,,,,1,,,,,5,,,,,,,,,,,,,,,,,,,,,,,,,1,,,,,,1,,,,,,,,,,,,,
-V Rájích B,VRJ_B,VRJ,B,,,,,,,,,,,,,,,,,,,,,,,,2,,1,,,,1,,,,,,,,,,,,,,,,,,,,,,,,,2,,,,,,,,,1,,1,,
-Zhejral A,ZHJ_A,ZHJ,A,1,,,,,,6,,,,,,,,,,,,,,,,,1,,,,,,,,1,,,,,,,,,,,,,,,,,2,,,,,,3,,1,,,,,,,,,,,
-Zhejral B,ZHJ_B,ZHJ,B,1,,,,,,3,,,,,1,,,,,,,,,,,,1,,,,,,,,,,,,,,,,,,,,,,,,,1,1,,,,,1,,,,,,,,,,,,,
-Zlámanec A,ZLM_A,ZLM,A,,1,,,,1,,,,,,,,,,,,,,,1,,,2,,,,,,,,,,,,,,,,,1,,,,,,,,3,,,,,,2,,,,,,,,,,,,1,
-Zlámanec B,ZLM_B,ZLM,B,,,,1,,,,,,,,1,,,,,1,,1,3,,,,,,,,,,,,,,,,,,,,1,,,,,,,,,1,,,,,,2,,,,,,,,,,,,,
-Zemlicka baz. A,ZMB_A,ZMB,A,,,,,,,,,,,,,,1,,,,,,,,,,4,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,,,,1,1,
-Zemlicka baz. B,ZMB_B,ZMB,B,,,,,,,,,,1,,,,,,,3,,,,,,,,,,,,,,,,,,,1,,,,,,,,,,,,,,,,,,,,3,,,,,,,,,,,,
-Zemlicka kys. A,ZMK_A,ZMK,A,,,1,,,,,,,,,,,,1,,,,,,,,,,,,,,,,,,1,,,,,,,,,,,,,,,,,3,,,,1,,,,,,,,,,,,,,
-Zemlicka kys. B,ZMK_B,ZMK,B,,,,,,,5,,,,,,,,,,,,,,,,,2,,,,,,,,,,,,,,,,,,,2,,,,,,,1,,,,,,,,,,,,,,,,,,
+NA,NA,NA,NA,AcuCer,AgyRur,AraHum,AraQua,AraStu,AraCuc,ArgBru,AttCar,AttFlo,CluLut,CluPhr,CluRec,CluSta,CneObs,DicAru,DipMel,DisBif,DisEle,NA,EnoOva,EntFla,EriAtr,EriDen,EvaArc,EvaFal,HelCup,HelFla,HypCor,HypHer,HypPyg,HypSan,LarCor,LasTri,LinTri,ManAca,MarRad,MasSun,MicPus,MicVir,MisVat,NeoBim,NerRad,OxyRam,OzyTru,PacLis,PhiAlb,PhiAur,PhiCol,PhyImp,PisMir,PlaTin,RobAru,SynGlo,TenTen,TetExt,TetMon,TetNig,TetObt,TetPin,TheGem,TibMar,TibObl,TreCri,WalFur,XysBif,XysCri,XysUlm,ZorSpi
+Babín A,BBN_A,BBN,A,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Babín B,BBN_B,BBN,B,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Bahna A,BHN_A,BHN,A,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,10,NA,NA,1,NA,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Bahna B,BHN_B,BHN,B,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Bazantka A,BZN_A,BZN,A,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,2,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Bazantka B,BZN_B,BZN,B,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,NA,NA,NA,NA,NA,2,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Borky A,BRK_A,BRK,A,NA,NA,NA,NA,NA,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,5,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA
+Borky B,BRK_B,BRK,B,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,1,NA,2,NA,NA,NA,NA,NA,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Dvo?išt? A,DVR_A,DVR,A,NA,NA,NA,NA,NA,NA,1,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,1,NA,1,NA,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,NA,NA,1,NA,NA,2,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA
+Dvo?išt? B,DVR_B,DVR,B,NA,NA,NA,NA,NA,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,7,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Hliní? A,HLN_A,HLN,A,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,2,1,NA,NA,NA,1,NA
+Hliní? B,HLN_B,HLN,B,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,1
+Hovízna A,HVZ_A,HVZ,A,NA,NA,NA,NA,NA,1,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Hovízna B,HVZ_B,HVZ,B,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,NA,NA,NA,NA,7,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,NA,NA,NA,NA,NA,NA,1,NA,NA,1,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Hráde?ek A,HRD_A,HRD,A,NA,NA,NA,NA,NA,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Hráde?ek B,HRD_B,HRD,B,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA
+Hrachovišt? A,HRC_A,HRC,A,NA,1,NA,NA,NA,NA,2,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Hrachovišt? B,HRC_B,HRC,B,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Chvojnov A,CHV_A,CHV,A,NA,1,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,5,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Chvojnov B,CHV_B,CHV,B,1,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,5,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,NA,NA
+Kališt? A,KLS_A,KLS,A,NA,NA,NA,2,NA,NA,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA
+Kališt? B,KLS_B,KLS,B,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,8,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kocanda A,KCD_A,KCD,A,NA,2,NA,1,NA,1,2,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,3,NA,1,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kocanda B,KCD_B,KCD,B,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kukla A,KKL_A,KKL,A,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,5,NA,NA,15,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kukla B,KKL_B,KKL,B,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,1,NA,NA,NA,NA,3,NA,NA,NA,1,NA,1,NA,NA,NA,NA,1,NA,31,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,NA,NA,NA,NA,NA,NA,NA
+Louky u ?. lesa A,LCL_A,LCL,A,NA,NA,1,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA
+Louky u ?. lesa B,LCL_B,LCL,B,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Louky v Jeníkov? A,LVJ_A,LVJ,A,NA,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,5,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Louky v Jeníkov? B,LVJ_B,LVJ,B,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA
+Nad Svitákem A,NSV_A,NSV,A,NA,1,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,6,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,1,NA,NA
+Nad Svitákem B,NSV_B,NSV,B,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Na oklice A,OKL_A,OKL,A,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Na oklice B,OKL_B,OKL,B,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,12,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Návesník A,NVS_A,NVS,A,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Návesník B,NVS_B,NVS,B,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Pa?ez A,PRZ_A,PRZ,A,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Pa?ez B,PRZ_B,PRZ,B,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Pod kam. vrchem A,PKV_A,PKV,A,1,NA,NA,NA,NA,NA,6,1,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,NA
+Pod kam. vrchem B,PKV_B,PKV,B,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA
+Rataj.ryb. A,RTR_A,RTR,A,NA,NA,NA,NA,1,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Rataj.ryb. B,RTR_B,RTR,B,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA
+Sta?. rybník A,STR_A,STR,A,NA,NA,1,NA,NA,NA,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA
+Sta?. rybník B,STR_B,STR,B,NA,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1
+Starý vdovec A,SVD_A,SVD,A,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,3,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA
+Starý vdovec B,SVD_B,SVD,B,NA,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,10,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,NA,2,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,3,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,1,NA
+Šafranice A,SFR_A,SFR,A,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Šafranice B,SFR_B,SFR,B,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA
+V Lísovech A,VLS_A,VLS,A,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,1,NA,NA,NA,1,2,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+V Lísovech B,VLS_B,VLS,B,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,1,NA,NA,NA,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+V Rájích A,VRJ_A,VRJ,A,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+V Rájích B,VRJ_B,VRJ,B,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,NA,1,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,1,NA,NA
+Zhejral A,ZHJ_A,ZHJ,A,1,NA,NA,NA,NA,NA,6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,3,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Zhejral B,ZHJ_B,ZHJ,B,1,NA,NA,NA,NA,NA,3,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,1,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Zlámanec A,ZLM_A,ZLM,A,NA,1,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,3,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA
+Zlámanec B,ZLM_B,ZLM,B,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,1,NA,1,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Zemlicka baz. A,ZMB_A,ZMB,A,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,1,1,NA
+Zemlicka baz. B,ZMB_B,ZMB,B,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Zemlicka kys. A,ZMK_A,ZMK,A,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Zemlicka kys. B,ZMK_B,ZMK,B,NA,NA,NA,NA,NA,NA,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
