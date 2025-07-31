@@ -1,6 +1,6 @@
 # Add species trait information to all spider files
 # Script: add_trait_rows.R
-# Purpose: Add family, dispersal, specialization, and threat status rows to all files
+# Purpose: Add family, specialization, dispersal, and protection status rows to all files
 # Load required libraries
 library(readr)
 library(dplyr)
@@ -15,7 +15,7 @@ trait_data <- read_csv("Spides_Species_Specializace_Sireni_Ohrozeni.csv", show_c
 # Create lookup tables for each trait
 family_lookup <- setNames(trait_data$Family, trait_data$Species)
 specialization_lookup <- setNames(trait_data$Specialization, trait_data$Species)
-dispersal_lookup <- setNames(trait_data$Disperzat, trait_data$Species)  
+dispersal_lookup <- setNames(trait_data$Disperzal, trait_data$Species)  
 protection_lookup <- setNames(trait_data$Protection_Status, trait_data$Species)
 
 cat("Created lookup tables for:", nrow(trait_data), "species\n")
@@ -88,24 +88,24 @@ add_trait_rows <- function(file_path) {
   
   # Convert to data frame rows
   family_df <- as.data.frame(t(family_complete), stringsAsFactors = FALSE)
-  dispersal_df <- as.data.frame(t(dispersal_complete), stringsAsFactors = FALSE)
   specialization_df <- as.data.frame(t(specialization_complete), stringsAsFactors = FALSE)
-  threat_df <- as.data.frame(t(threat_complete), stringsAsFactors = FALSE)
+  dispersal_df <- as.data.frame(t(dispersal_complete), stringsAsFactors = FALSE)
+  protection_df <- as.data.frame(t(protection_complete), stringsAsFactors = FALSE)
   
   # Set column names to match original data
   names(family_df) <- names(data)
-  names(dispersal_df) <- names(data)
   names(specialization_df) <- names(data)
-  names(threat_df) <- names(data)
+  names(dispersal_df) <- names(data)
+  names(protection_df) <- names(data)
   
   # Insert trait rows after the short names (row 2)
-  # New structure: Row 1=Species, Row 2=Short names, Row 3=Family, Row 4=Dispersal, Row 5=Specialization, Row 6=Threat, Row 7+=Data
+  # New structure: Row 1=Species, Row 2=Short names, Row 3=Family, Row 4=Specialization, Row 5=Dispersal, Row 6=Protection, Row 7+=Data
   updated_data <- rbind(
     data[1:2, ],           # Species names and short names
     family_df,             # Family
+    specialization_df,     # Specialization
     dispersal_df,          # Dispersal
-    specialization_df,     # Specialization  
-    threat_df,             # Threat status
+    protection_df,         # Protection status
     data[3:nrow(data), ]   # Original data
   )
   
@@ -161,8 +161,9 @@ cat("New file structure:\n")
 cat("Row 1: Species names\n")
 cat("Row 2: Short names\n") 
 cat("Row 3: Family\n")
-cat("Row 4: Dispersal (sireni)\n")
-cat("Row 5: Specialization (specializace)\n")
-cat("Row 6: Threat status (ohrozeni)\n")
+cat("Row 4: Specialization\n")
+cat("Row 5: Dispersal (Disperzat)\n") 
+cat("Row 6: Protection Status\n")
 cat("Row 7+: Site data\n")
 cat(paste(rep("=", 60), collapse=""), "\n")
+
