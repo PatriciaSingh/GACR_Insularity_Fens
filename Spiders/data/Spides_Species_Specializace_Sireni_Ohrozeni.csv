@@ -1,10 +1,10 @@
 Species,Family,Specialization,Disperzal,Protection_Status,Short_name
+Achaeridion conigerum,Linyphiidae,3,2,KO,AchCon
 Aculepeira ceropegia,Araneidae,0,1,NO,AcuCer
 Agroeca brunnea,Liocranidae,0,1,NO,AgrBru
 Agyneta affinis,Linyphiidae,0,2,NO,AgyAff
 Agyneta cauta,Linyphiidae,2,2,TO,AgyCau
 Agyneta rurestris,Linyphiidae,0,2,NO,AgyRur
-Achaeridion conigerum,Linyphiidae,3,2,KO,AchCon
 Alopecosa cuneata,Lycosidae,0,1,NO,AloCun
 Alopecosa pulverulenta,Lycosidae,0,1,NO,AloPul
 Antistea elegans,Hahniidae,2,1,TO,AntEle
@@ -30,6 +30,7 @@ Centromerus levitarsis,Linyphiidae,2,2,O,CenLev
 Ceratinella brevipes,Linyphiidae,1,2,NO,CerBrp
 Ceratinella brevis,Linyphiidae,0,2,NO,CerBrs
 Cercidia prominens,Araneidae,1,1,NO,CerPro
+Cheiracanthium erraticum,Cheiracanthiidae,1,0,NO,CheErr
 Cicurina cicur,Cicurinidae,0,0,NO,CicCic
 Clubiona diversa,Clubionidae,1,0,TO,CluDiv
 Clubiona kulczynskii,Clubionidae,3,0,O,CluKul
@@ -84,7 +85,6 @@ Hypomma fulvum,Linyphiidae,2,2,NZ,HypFul
 Hypsosinga heri,Araneidae,2,1,O,HypHer
 Hypsosinga pygmaea,Araneidae,1,1,TO,HypPyg
 Hypsosinga sanguinea,Araneidae,1,1,NO,HypSan
-Cheiracanthium erraticum,Cheiracanthiidae,1,0,NO,CheErr
 Inermocoelotes inermis,Agelenidae,1,0,NO,IneIne
 Larinioides cornutus,Araneidae,2,1,NO,LarCor
 Lasaeola tristis,Theridiidae,0,1,TO,LasTri
@@ -179,6 +179,7 @@ Trematocephalus cristatus,Linyphiidae,0,2,NO,TreCri
 Trichopterna cito,Linyphiidae,2,2,O,TriCit
 Trichopternoides thorelli,Linyphiidae,2,2,TO,TriTho
 Trochosa spinipalpis,Lycosidae,2,1,TO,TroSpi
+Trochosa sp.,Lycosidae,NA,NA,NA,TroSpe
 Trochosa terricola,Lycosidae,1,1,NO,TroTer
 Walckenaeria alticeps,Linyphiidae,2,2,NO,WalAlt
 Walckenaeria atrotibialis,Linyphiidae,1,2,NO,WalAtr
@@ -197,3 +198,4 @@ Zelotes latreilei,Gnaphosidae,0,1,NO,ZelLat
 Zelotes petrensis,Gnaphosidae,0,1,NO,ZelPet
 Zelotes subterraneus,Gnaphosidae,1,1,NO,ZelSub
 Zora spinimana,Miturgidae,1,1,NO,ZorSpi
+Dolomedes sp. juv.,Pisauridae,NA,NA,NA,DolSpe
