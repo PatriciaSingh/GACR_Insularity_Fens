@@ -31,17 +31,17 @@ cat("└── results/  - R objects for further analysis\n\n")
 # Define all files for analysis
 files_list <- list(
   # Original files
-  "Pasti Cerven" = "Spider_pasti_cerven_finalPA_forcombining.csv",
-  "Smyk Kveten" = "Spider_smyk_kveten_finalPA_forcombining.csv",
-  "Smyk Cerven" = "Spider_smyk_cerven_finalPA_forcombining.csv",
-  "Pasti Kveten" = "Spider_pasti_kveten_finalPA_forcombining.csv",
+  "Pasti Cerven" = "Spider_pasti_cerven_finalPA_forcombining_okZeros.csv",
+  "Smyk Kveten" = "Spider_smyk_kveten_finalPA_forcombining_okZeros.csv",
+  "Smyk Cerven" = "Spider_smyk_cerven_finalPA_forcombining_okZeros.csv",
+  "Pasti Kveten" = "Spider_pasti_kveten_finalPA_forcombining_okZeros.csv",
   
   # Combined files
-  "All Combined" = "Spider_combined_all_methods_PA.csv",
-  "Smyk Method" = "Spider_combined_smyk_PA.csv",
-  "Pasti Method" = "Spider_combined_pasti_PA.csv",
-  "Kveten Month" = "Spider_combined_kveten_PA.csv",
-  "Cerven Month" = "Spider_combined_cerven_PA.csv"
+  "All Combined" = "Spider_combined_all_methods_PA_okZeros.csv",
+  "Smyk Method" = "Spider_combined_smyk_PA_okZeros.csv",
+  "Pasti Method" = "Spider_combined_pasti_PA_okZeros.csv",
+  "Kveten Month" = "Spider_combined_kveten_PA_okZeros.csv",
+  "Cerven Month" = "Spider_combined_cerven_PA_okZeros.csv"
 )
 
 # Function to prepare data for DCA
@@ -330,7 +330,8 @@ for (name in names(dca_results)) {
     
     # Save R object for further analysis
     rdata_file <- file.path(results_dir, paste0("DCA_", gsub("[^A-Za-z0-9]", "_", name), ".RData"))
-    save(dca_results[[name]], file = rdata_file)
+    dca_obj <- dca_results[[name]]  # Create temporary variable
+    save(dca_obj, file = rdata_file)
     
     cat("Saved DCA results for", name, "\n")
   }
