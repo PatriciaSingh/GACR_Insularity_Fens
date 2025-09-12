@@ -21,14 +21,14 @@ if(!dir.exists("../results")) {
 counts_data <- read_csv("locality_specialist_summary_counts.csv")
 pa_data <- read_csv("locality_specialist_summary_PA.csv")
 
-# You'll need to add a column to classify sites as Pristine (A) or Degraded (B)
-# For now, I'll create an example - you should modify this based on your site classification
-# Example: assuming sites with certain names or patterns are pristine vs degraded
-counts_data$Site_Type <- ifelse(grepl("pattern_for_pristine", counts_data$Locality, ignore.case = TRUE), 
+# Extract site type from locality names ending with "_A" or "_B"
+counts_data$Site_Type <- ifelse(grepl("_A$", counts_data$Locality), 
                                 "Pristine (A)", "Degraded (B)")
 
-# If you have a specific way to classify sites, replace the above line with your logic
-# For example: counts_data$Site_Type <- ifelse(counts_data$Locality %in% c("Site1", "Site3"), "Pristine (A)", "Degraded (B)")
+# Verify the classification
+cat("Site type classification:\n")
+table(counts_data$Site_Type)
+cat("\n")
 
 # Prepare data for plotting
 plot_data <- counts_data %>%
@@ -99,14 +99,14 @@ comparison_data <- counts_data %>%
   mutate(Total_Specialists = Fen_specialists + Fen_tolerant + Generalists)
 
 # Scatter plot comparing site types
-p4 <- ggplot(comparison_data, aes(x = Total_Specialists, y = Total_species)) +
+p4 <- ggplot(comparison_data, aes(x = Fen_specialists, y = Total_species)) +
   geom_point(aes(color = Site_Type), size = 3, alpha = 0.7) +
   geom_text(aes(label = substr(Locality, 1, 3)), vjust = -0.5, size = 2.5) +
   geom_smooth(method = "lm", se = FALSE, linetype = "dashed", color = "red") +
   scale_color_manual(values = c("Degraded (B)" = "#E57373", "Pristine (A)" = "#81C784")) +
   labs(title = "Site Comparison: All Combined",
        subtitle = "Each point represents one site (A vs B plot)",
-       x = "Total Number of Specialists",
+       x = "Fen specialists",
        y = "Total Number of Species",
        color = "Plot Type") +
   theme_minimal()
@@ -135,7 +135,7 @@ summary_stats <- counts_data %>%
     mean_fen_specialists = round(mean(Fen_specialists, na.rm = TRUE), 2),
     mean_fen_tolerant = round(mean(Fen_tolerant, na.rm = TRUE), 2),
     mean_generalists = round(mean(Generalists, na.rm = TRUE), 2),
-    mean_total_specialists = round(mean(Fen_specialists + Fen_tolerant + Generalists, na.rm = TRUE), 2),
+    mean_total_specialists = round(mean(Fen_specialists, na.rm = TRUE), 2),  # Only fen specialists
     .groups = 'drop'
   )
 
@@ -147,3 +147,4 @@ cat("- specialist_categories_boxplot.png\n")
 cat("- mean_specialist_counts.png\n") 
 cat("- total_specialists_boxplot.png\n")
 cat("- site_comparison_scatter.png\n")
+
