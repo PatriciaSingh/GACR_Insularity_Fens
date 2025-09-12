@@ -1,4 +1,4 @@
-Locality,Total,Specialist_1,Specialist_2,Specialist_3
+Locality,Total,Fen_specialist,Fen_tolerant,Generalist
 LCL_A,27,2,9,16
 LCL_B,10,1,4,5
 BHN_A,25,3,8,14
