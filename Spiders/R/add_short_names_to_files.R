@@ -6,10 +6,10 @@ library(readr)
 library(dplyr)
 
 # Set working directory
-setwd("Spiders/data")
+setwd("Oribatida/data")
 
 # Step 1: Read the file with short names to create lookup table
-species_lookup <- read_csv("Spides_Species_Specializace_Sireni_Ohrozeni.csv")
+species_lookup <- read_csv("Oribatida_Species_Specializace_Short_names.csv")
 
 # Create a lookup table: Latin name -> short name
 lookup_table <- setNames(species_lookup$short_name, species_lookup$Species)
@@ -50,12 +50,7 @@ add_short_names_row <- function(file_path) {
 }
 
 # Step 3: List your CSV files to process
-csv_files <- c(
-  "Spider_pasti_cerven_final.csv",
-  "Spider_pasti_kveten_final.csv",
-  "Spider_smyk_cerven_final.csv",
-  "Spider_smyk_kveten_final.csv"
-)
+csv_files <- c("Oribatida_original_clean_names.csv")
 
 # Step 4: Process each file
 for (file in csv_files) {
