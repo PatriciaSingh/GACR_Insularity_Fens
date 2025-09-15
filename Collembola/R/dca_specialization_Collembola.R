@@ -9,10 +9,10 @@ library(readr)
 library(dplyr)
 
 # Set working directory and create results folder
-setwd("Oribatida/data")
+setwd("Collembola/data")
 if(!dir.exists("../results")) dir.create("../results")
 
-cat("=== ORIBATIDA DCA WITH SPECIALIZATION ===\n")
+cat("=== Collembola DCA WITH SPECIALIZATION ===\n")
 
 # Function to run DCA analysis with specialization
 run_dca_specialization <- function(file_name, dataset_name, use_hellinger = FALSE) {
@@ -75,14 +75,14 @@ run_dca_specialization <- function(file_name, dataset_name, use_hellinger = FALS
   ) %>%
     mutate(
       Specialization_Level = case_when(
-        Specialization == 1 ~ "Fen specialists (1)",
-        Specialization == 2 ~ "Fen tolerant (2)", 
-        Specialization == 3 ~ "Generalists (3)",
+        Specialization == 1 ~ "Tirfobionti (1)",
+        Specialization == 2 ~ "Neustonicke_hygrofilni (2)", 
+        Specialization == 3 ~ "Ostatni (3)",
         is.na(Specialization) ~ "Unknown"
       ),
       Specialization_Level = factor(Specialization_Level, 
-                                    levels = c("Fen specialists (1)", "Fen tolerant (2)", 
-                                               "Generalists (3)", "Unknown"))
+                                    levels = c("Tirfobionti (1)", "Neustonicke_hygrofilni (2)", 
+                                               "Ostatni (3)", "Unknown"))
     )
   
   # Create plot with specialization
@@ -104,9 +104,9 @@ run_dca_specialization <- function(file_name, dataset_name, use_hellinger = FALS
     # Specialization colors
     scale_color_manual(
       values = c(
-        "Fen specialists (1)" = "#81C784",      # Green
-        "Fen tolerant (2)" = "#FFB74D",         # Orange
-        "Generalists (3)" = "#E57373",          # Red
+        "Tirfobionti (1)" = "#81C784",      # Green
+        "Neustonicke_hygrofilni (2)" = "#FFB74D",         # Orange
+        "Ostatni (3)" = "#E57373",          # Red
         "Unknown" = "gray60"                    # Gray
       ),
       name = "Specialization Level"
@@ -148,11 +148,11 @@ run_dca_specialization <- function(file_name, dataset_name, use_hellinger = FALS
 results <- list()
 
 # 1. Abundance data with Hellinger
-results$abundance <- run_dca_specialization("Oribatida_final_with_specialization.csv", 
+results$abundance <- run_dca_specialization("Collembola_final_with_specialization.csv", 
                                             "Abundance Data", use_hellinger = TRUE)
 
 # 2. Presence-absence data
-results$presence <- run_dca_specialization("Oribatida_finalPA_with_specialization.csv", 
+results$presence <- run_dca_specialization("Collembola_finalPA_with_specialization.csv", 
                                            "Presence-Absence Data", use_hellinger = FALSE)
 
 # Summary table
@@ -168,14 +168,14 @@ summary_df <- data.frame(
 )
 print(summary_df)
 
-cat("\n📁 Results saved to: Oribatida/results/\n")
+cat("\n📁 Results saved to: Collembola/results/\n")
 cat("Files created:\n")
 cat("• dca_specialization_abundance_data.png\n")
 cat("• dca_specialization_presence-absence_data.png\n")
 
 cat("\n🎨 Specialization colors:\n")
-cat("• Green = Fen specialists (1)\n")
-cat("• Orange = Fen tolerant (2)\n")
-cat("• Red = Generalists (3)\n")
+cat("• Green = Tirfobionti (1)\n")
+cat("• Orange = Neustonicke_hygrofilni (2)\n")
+cat("• Red = Ostatni (3)\n")
 cat("• Gray = Sites and Unknown species\n")
 
