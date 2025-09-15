@@ -1,165 +1,142 @@
-# Add specialization row to final Collembola data
-# Script: add_specialization_to_final.R
-# Purpose: Add specialization info as first row to Collembola_final.csv
+# Simple script to add specialization row to Collembola_final.csv
+# Run this script from Collembola/data directory
 
 library(readr)
 library(dplyr)
 library(stringr)
 
-# =============================================================================
-# CONFIGURATION
-# =============================================================================
-
-TAXA_NAME <- "Collembola"
-
-# File paths
-SHORT_NAMES_FILE <- file.path(TAXA_NAME, "data", paste0(TAXA_NAME, "_Species_Short_Names.csv"))
-FINAL_DATA_FILE <- "Collembola_final.csv"  # Your current file
-OUTPUT_FILE <- "Collembola_final_with_specialization.csv"
+# Check current directory
+cat("Current directory:", getwd(), "\n")
 
 # =============================================================================
-# MAIN PROCESSING
+# File paths - all files are in current directory (Collembola/data)
 # =============================================================================
 
-cat("🚀 Adding specialization row to", FINAL_DATA_FILE, "\n")
-cat(paste(rep("=", 60), collapse = ""), "\n")
+SPEC_FILE <- "Collembola_Species_Specializace_Short_Names.csv"  # Has short_name + Specializace
+FINAL_DATA_FILE <- "Collembola_final.csv"  # Your final data with short column names
+OUTPUT_FILE <- "Collembola_final_with_specialization.csv"  # Save in same directory
+
+cat("Looking for files:\n")
+cat("- Specialization source:", SPEC_FILE, "\n")
+cat("- Final data:", FINAL_DATA_FILE, "\n")
 
 # Check if files exist
-if (!file.exists(SHORT_NAMES_FILE)) {
-  stop(paste("❌ Short names file not found:", SHORT_NAMES_FILE))
+if (!file.exists(SPEC_FILE)) {
+  stop("ERROR: Cannot find ", SPEC_FILE)
 }
 
 if (!file.exists(FINAL_DATA_FILE)) {
-  stop(paste("❌ Final data file not found:", FINAL_DATA_FILE))
+  stop("ERROR: Cannot find ", FINAL_DATA_FILE)
 }
 
-# Read the short names file with specialization info
-cat("📖 Reading specialization data from:", SHORT_NAMES_FILE, "\n")
-short_names_df <- read_csv(SHORT_NAMES_FILE, show_col_types = FALSE)
+# =============================================================================
+# Read the data
+# =============================================================================
 
-# Check if Specializace column exists
-if (!"Specializace" %in% colnames(short_names_df)) {
-  stop("❌ 'Specializace' column not found in the short names file!")
+# Read specialization data (should have short_name and Specializace columns)
+cat("\nReading specialization data...\n")
+spec_data <- read_csv(SPEC_FILE, show_col_types = FALSE)
+
+# Check required columns
+if (!"short_name" %in% colnames(spec_data)) {
+  stop("ERROR: No 'short_name' column found!")
 }
 
-cat("✅ Found specialization data for", nrow(short_names_df), "species\n")
+if (!"Specialization" %in% colnames(spec_data)) {
+  stop("ERROR: No 'Specializace' column found!")
+}
 
-# Clean species names (remove whitespace issues)
-short_names_df$Species_Clean <- str_trim(str_replace_all(short_names_df$Species, "[\u00A0\u2000-\u200B\u2028\u2029]", " "))
-short_names_df$Species_Clean <- str_squish(short_names_df$Species_Clean)
+cat("Found", nrow(spec_data), "species with specialization data\n")
+cat("Columns available:", paste(colnames(spec_data), collapse = ", "), "\n")
 
-# Create lookup table: short_name -> specialization
-short_to_spec_lookup <- setNames(short_names_df$Specializace, short_names_df$short_name)
+# Create lookup: short_name -> specialization
+short_to_spec <- setNames(spec_data$Specialization, spec_data$short_name)
+short_to_spec <- short_to_spec[!is.na(names(short_to_spec))]
 
-# Also create full name to specialization lookup for backup matching
-full_to_spec_lookup <- setNames(short_names_df$Specializace, short_names_df$Species_Clean)
-full_to_short_lookup <- setNames(short_names_df$short_name, short_names_df$Species_Clean)
+cat("Created lookup table for", length(short_to_spec), "species\n")
 
-cat("📊 Created lookup tables for specialization matching\n")
-
-# Read the final data file
-cat("📖 Reading final data from:", FINAL_DATA_FILE, "\n")
+# Read final data
+cat("\nReading final data file...\n")
 final_data <- read_csv(FINAL_DATA_FILE, show_col_types = FALSE)
 
-cat("📏 Final data dimensions:", nrow(final_data), "rows x", ncol(final_data), "columns\n")
+cat("Final data:", nrow(final_data), "rows x", ncol(final_data), "columns\n")
 
-# Get column names
+# =============================================================================
+# Create specialization row
+# =============================================================================
+
 column_names <- colnames(final_data)
 locality_col <- column_names[1]
-species_short_names <- column_names[-1]  # All columns except locality
+species_short_names <- column_names[-1]
 
-cat("🏠 Locality column:", locality_col, "\n")
-cat("🦟 Species columns (short names):", length(species_short_names), "\n")
+cat("Locality column:", locality_col, "\n")
+cat("Species columns:", length(species_short_names), "\n")
 
-# Create specialization row
-specialization_row <- c(locality_col)  # Start with locality column value
-matched_spec_count <- 0
-unmatched_count <- 0
-
-cat("\n🔍 Matching specializations...\n")
+# Build specialization row
+specialization_row <- c("Specialization")  # First column header for specialization
+matched_count <- 0
 
 for (short_name in species_short_names) {
-  if (short_name %in% names(short_to_spec_lookup)) {
-    # Direct match with short name
-    spec_value <- short_to_spec_lookup[short_name]
+  if (short_name %in% names(short_to_spec)) {
+    spec_value <- short_to_spec[short_name]
     specialization_row <- c(specialization_row, if(is.na(spec_value)) "Unknown" else spec_value)
-    matched_spec_count <- matched_spec_count + 1
+    matched_count <- matched_count + 1
   } else {
-    # Try to find by looking up in the full names
-    # This handles cases where short names might be slightly different
-    cat("⚠️  No direct match for:", short_name, "\n")
     specialization_row <- c(specialization_row, "Unknown")
-    unmatched_count <- unmatched_count + 1
   }
 }
 
-# Create the specialization row as a data frame
+cat("\nMatched", matched_count, "out of", length(species_short_names), "species (", 
+    round(matched_count/length(species_short_names)*100, 1), "%)\n")
+
+# =============================================================================
+# Combine data and save
+# =============================================================================
+
+# Create specialization row as data frame
 spec_row_df <- data.frame(matrix(specialization_row, nrow = 1))
 colnames(spec_row_df) <- column_names
 
-# Convert numeric columns to character temporarily for binding
+# Convert final data to character temporarily for binding
 final_data_char <- final_data
-final_data_char[,-1] <- lapply(final_data_char[,-1], as.character)
+final_data_char[, -1] <- lapply(final_data_char[, -1], as.character)
 
-# Add specialization row as first row
-final_data_with_spec <- bind_rows(spec_row_df, final_data_char)
+# Combine: specialization row first, then original data
+final_with_spec <- bind_rows(spec_row_df, final_data_char)
 
-# Convert back to original data types (except first row)
-for (i in 2:ncol(final_data_with_spec)) {
-  # Keep first row as character, convert rest back to numeric
-  final_data_with_spec[[i]][-1] <- as.numeric(final_data_with_spec[[i]][-1])
+# Convert back to numeric (except first row)
+for (i in 2:ncol(final_with_spec)) {
+  final_with_spec[[i]][-1] <- as.numeric(final_with_spec[[i]][-1])
 }
 
-# Display results
-cat("\n", paste(rep("=", 60), collapse = ""), "\n")
-cat("SPECIALIZATION MATCHING RESULTS\n")
-cat(paste(rep("=", 60), collapse = ""), "\n")
-cat("Total species columns:", length(species_short_names), "\n")
-cat("Successfully matched:", matched_spec_count, "\n")
-cat("Unknown/unmatched:", unmatched_count, "\n")
-cat("Match rate:", round(matched_spec_count/length(species_short_names)*100, 1), "%\n")
+# Save result
+write_csv(final_with_spec, OUTPUT_FILE)
+
+# =============================================================================
+# Results
+# =============================================================================
+
+cat("\n", paste(rep("=", 50), collapse = ""), "\n")
+cat("RESULTS\n")
+cat(paste(rep("=", 50), collapse = ""), "\n")
 
 # Show specialization summary
-spec_counts <- table(specialization_row[-1], useNA = "ifany")  # Exclude locality column
-cat("\n🏷️  SPECIALIZATION SUMMARY:\n")
+spec_counts <- table(specialization_row[-1], useNA = "ifany")
+cat("Specialization summary:\n")
 for (spec_type in names(spec_counts)) {
-  cat("   -", spec_type, ":", spec_counts[spec_type], "species\n")
+  cat("  -", spec_type, ":", spec_counts[spec_type], "species\n")
 }
 
-# Save the result
-write_csv(final_data_with_spec, OUTPUT_FILE)
-cat("\n✅ File with specialization row saved to:", OUTPUT_FILE, "\n")
+cat("\nFiles:\n")
+cat("- Input:", FINAL_DATA_FILE, "\n")
+cat("- Output:", OUTPUT_FILE, "\n")
+cat("- Rows added: 1 (specialization row)\n")
+cat("- Total rows now:", nrow(final_with_spec), "\n")
 
-# Display preview
-cat("\n📊 DATA PREVIEW (First 3 rows, first 6 columns):\n")
-cat("Row 1 = Specialization info, Row 2+ = Original data\n")
-preview_data <- final_data_with_spec[1:min(3, nrow(final_data_with_spec)), 1:min(6, ncol(final_data_with_spec))]
-print(preview_data)
+# Show preview
+cat("\nPreview (first 3 rows, first 5 columns):\n")
+preview <- final_with_spec[1:min(3, nrow(final_with_spec)), 1:min(5, ncol(final_with_spec))]
+print(preview)
 
-# Show some examples of the matching
-cat("\n📝 SPECIALIZATION EXAMPLES:\n")
-example_cols <- min(5, length(species_short_names))
-for (i in 1:example_cols) {
-  short_name <- species_short_names[i]
-  spec_value <- specialization_row[i + 1]  # +1 because first element is locality
-  cat("   -", short_name, "->", spec_value, "\n")
-}
+cat("\nDone! Your file with specialization row is:", OUTPUT_FILE, "\n")
 
-# Final summary
-cat("\n📋 FINAL SUMMARY:\n")
-cat("- Input data file:", FINAL_DATA_FILE, "\n")
-cat("- Specialization source:", SHORT_NAMES_FILE, "\n")
-cat("- Output file:", OUTPUT_FILE, "\n")
-cat("- Original data rows:", nrow(final_data), "\n")
-cat("- New data rows:", nrow(final_data_with_spec), "(+1 specialization row)\n")
-cat("- Species columns:", length(species_short_names), "\n")
-cat("- Specialization match rate:", round(matched_spec_count/length(species_short_names)*100, 1), "%\n")
-
-if (unmatched_count == 0) {
-  cat("- ✅ All species specializations successfully added!\n")
-} else {
-  cat("- ⚠️ ", unmatched_count, "species marked as 'Unknown' specialization\n")
-}
-
-cat("\n🎉 Specialization row successfully added!\n")
-cat("📄 Your final file is ready:", OUTPUT_FILE, "\n")
