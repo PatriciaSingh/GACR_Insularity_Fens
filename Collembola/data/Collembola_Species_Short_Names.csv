@@ -1,0 +1,57 @@
+Species,Species_Name_Author,Specialization,Specialization_Words,short_name
+Ceratophysella scotica ,"Carpenter & Evans, 1899",1,tyrfobionti,CerSco
+Neelides minutus ,"Folsom, 1901)",1,tyrfobionti,NeeMin
+Anurida granaria ,"Nicolet, 1847",2,neustonicke_hygrofilni,AnuGra
+Anurida tullbergi,"Schött, 1891",2,neustonicke_hygrofilni,AnuTul
+Ceratophysella denticulata ,"Bagnall, 1941",2,neustonicke_hygrofilni,CerDen
+Desoria fennica ,"Reuter, 1895)",2,neustonicke_hygrofilni,DesFen
+Isotoma viridis,"Bourlet, 1839",2,neustonicke_hygrofilni,IsoVir
+Isotomurus palustris ,"Müller, 1776)",2,neustonicke_hygrofilni,IsoPal
+Isotomurus plumosus ,"Bagnall, 1940",2,neustonicke_hygrofilni,IsoPlu
+Pachyotoma crassicauda ,"Tullberg, 1871)",2,neustonicke_hygrofilni,PacCra
+Sminthurides malmgreni,"Tullberg, 1876)",2,neustonicke_hygrofilni,SmiMal
+Sminthurides schoetti ,"Axelson, 1903",2,neustonicke_hygrofilni,SmiSch
+Tetracanthella fjellbergi,"Deharveng, 1987",2,neustonicke_hygrofilni,TetFje
+Anurida ellipsoides,"Stach, 1949",3,ostatni,AnuEll
+Brachystomella parvula ,"Schäffer, 1896",3,ostatni,BraPar
+Desoria trispinata ,"MacGillivray, 1896)",3,ostatni,DesTri
+Desoria violacea ,"Tullberg, 1876)",3,ostatni,DesVio
+Deutonura albella ,"Stach, 1921)",3,ostatni,DeuAlb
+Deutonura conjuncta ,"Stach, 1926)",3,ostatni,DeuCon
+Folsomia inoculata,"Stach, 1947",3,ostatni,FolIno
+Folsomia manolachei," Bagnall, 1939",3,ostatni,FolMan
+Folsomia penicula,"Bagnall, 1939",3,ostatni,FolPen
+Folsomia quadrioculata ,"Tullberg, 1871)",3,ostatni,FolQua
+Friesea truncata,"Cassagnau, 1958",3,ostatni,FriTru
+Heterosminthurus bilineatus ,"Bourlet, 1842)",3,ostatni,HetBil
+Chaetophorura simplex ,"Gisin, 1958)",3,ostatni,ChaSim
+Isotomiella minor ,"Schäffer, 1896)",3,ostatni,IsoMin
+Lepidocyrtus cyaneus ,"Tullberg, 1871",3,ostatni,LepCya
+Lepidocyrtus lanuginosus ,"Linnaeus, 1788)",3,ostatni,LepLan
+Lepidocyrtus lignorum,"Fabricius, 1793)",3,ostatni,LepLig
+Megalothorax minimus," Willem, 1900",3,ostatni,MegMin
+Mesaphorura florae ,"Simón, Ruiz, Martinez & Lucianez, 1994",3,ostatni,MesFlo
+Mesaphorura macrochaeta ,"Rusek, 1976",3,ostatni,MesMac
+Mesaphorura tenuisensillata ,"Rusek, 1974",3,ostatni,MesTen
+Mesaphorura yosiii,"Rusek, 1967)",3,ostatni,MesYos
+Micranurida balta," Fjellberg, 1998",3,ostatni,MicBal
+Micranurida pygmaea ,"Börner, 1901",3,ostatni,MicPyg
+Neanura muscorum ,"Templeton, 1836)",3,ostatni,NeaMus
+Oligaphorura absoloni ,"Börner, 1901)",3,ostatni,OliAbs
+Oligaphorura groenlandica ,"Tullberg, 1876)",3,ostatni,OliGro
+Parisotoma notabilis ,"Schäffer, 1896)",3,ostatni,ParNot
+Pogonognathellus flavescens ,"Tullberg, 1871)",3,ostatni,PogFla
+Proisotoma minima,"Absolon, 1901",3,ostatni,ProMin
+Protaphorura armata ,"Tullberg, 1869)",3,ostatni,ProArm
+Protaphorura aurantiaca ,"Ridley, 1880)",3,ostatni,ProAur
+Pseudachorutes laricis,"Arbea & Jordana, 1989",3,ostatni,PseLar
+Pseudisotoma sensibilis,"Tullberg, 1876",3,ostatni,PseSen
+Pseudosinella albida ,"Stach, 1930)",3,ostatni,PseAlb
+Pygmarrhopalites pygmaeus ,"Wankel, 1860)",3,ostatni,PygPyg
+Sminthurinus aureus ,"Lubbock, 1862)",3,ostatni,SmiAur
+Sminthurinus signatus ,"Krausbauer, 1898)",3,ostatni,SmiSig
+Sphaeridia furcata ,"Dunger & Bretfeld, 1989",3,ostatni,SphFur
+Sphaeridia pumilis ,"Krausbauer, 1898)",3,ostatni,SphPum
+Tetrodontophora bielanensis ,"Waga, 1842)",3,ostatni,TetBie
+Tomocerina minuta,"Tullberg, 1876)",3,ostatni,TomMin
+Willemia anophthalma,"Börner, 1901",3,ostatni,WilAno
