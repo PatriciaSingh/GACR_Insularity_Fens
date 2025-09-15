@@ -13,8 +13,8 @@ cat("Current directory:", getwd(), "\n")
 # =============================================================================
 
 SPEC_FILE <- "Collembola_Species_Specializace_Short_Names.csv"  # Has short_name + Specializace
-FINAL_DATA_FILE <- "Collembola_final.csv"  # Your final data with short column names
-OUTPUT_FILE <- "Collembola_final_with_specialization.csv"  # Save in same directory
+FINAL_DATA_FILE <- "Collembola_finalPA.csv"  # Your final data with short column names
+OUTPUT_FILE <- "Collembola_finalPA_with_specialization.csv"  # Save in same directory
 
 cat("Looking for files:\n")
 cat("- Specialization source:", SPEC_FILE, "\n")

@@ -1,4 +1,4 @@
-# Simple DCA Analysis for Oribatida Data
+# Simple DCA Analysis for Collembola Data
 # Two analyses: Abundance (Hellinger) + Presence-Absence
 
 # Load libraries
@@ -7,10 +7,10 @@ library(ggplot2)
 library(readr)
 
 # Set working directory and create results folder
-setwd("Oribatida/data")
+setwd("Collembola/data")
 if(!dir.exists("../results")) dir.create("../results")
 
-cat("=== ORIBATIDA DCA ANALYSIS ===\n")
+cat("=== Collembola DCA ANALYSIS ===\n")
 
 # Function to run DCA analysis
 run_dca <- function(file_name, dataset_name, use_hellinger = FALSE) {
@@ -97,10 +97,10 @@ run_dca <- function(file_name, dataset_name, use_hellinger = FALSE) {
 results <- list()
 
 # 1. Abundance data with Hellinger
-results$abundance <- run_dca("Oribatida_final.csv", "Abundance Data", use_hellinger = TRUE)
+results$abundance <- run_dca("Collembola_final.csv", "Abundance Data", use_hellinger = TRUE)
 
 # 2. Presence-absence data
-results$presence <- run_dca("Oribatida_finalPa.csv", "Presence-Absence Data", use_hellinger = FALSE)
+results$presence <- run_dca("Collembola_finalPa.csv", "Presence-Absence Data", use_hellinger = FALSE)
 
 # Summary table
 cat("\n=== SUMMARY ===\n")
@@ -115,7 +115,7 @@ summary_df <- data.frame(
 )
 print(summary_df)
 
-cat("\n📁 Results saved to: Oribatida/results/\n")
+cat("\n📁 Results saved to: Collembola/results/\n")
 cat("Files created:\n")
 cat("• dca_abundance_data.png\n")
 cat("• dca_presence-absence_data.png\n")

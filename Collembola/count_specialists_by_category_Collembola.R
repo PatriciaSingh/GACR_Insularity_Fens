@@ -1,17 +1,17 @@
 # count_specialists_by_category.R
-# Count specialist species by category (1=fen specialists, 2=fen tolerant, 3=generalists)
+# Count specialist species by category (1=Tirfobionti, 2=Neustonicke_hygrofilni, 3=Ostatni)
 # Creates summary statistics for preliminary analysis
 
 # Set working directory
-setwd("Oribatida/data")
+setwd("Collembola/data")
 
 # Load required libraries
 library(readr)
 library(dplyr)
 
 # Read the files with specialization data
-file1_spec <- read_csv("Oribatida_final_with_specialization.csv")
-file2_spec <- read_csv("Oribatida_finalPA_with_specialization.csv")
+file1_spec <- read_csv("Collembola_final_with_specialization.csv")
+file2_spec <- read_csv("Collembola_finalPA_with_specialization.csv")
 
 # Create summary for each locality
 create_locality_summary <- function(data_file) {
@@ -25,9 +25,9 @@ create_locality_summary <- function(data_file) {
   locality_summary <- data.frame(
     Locality = locality_data$Locality,
     Total_species = rowSums(locality_data[, -1] > 0, na.rm = TRUE),
-    Fen_specialists = NA,
-    Fen_tolerant = NA,
-    Generalists = NA
+    Tirfobionti = NA,
+    Neustonicke_hygrofilni = NA,
+    Ostatni = NA
   )
   
   # Calculate counts for each category per locality
@@ -35,9 +35,9 @@ create_locality_summary <- function(data_file) {
     row_data <- as.numeric(locality_data[i, -1])
     
     # Count species present (>0) by specialization category
-    locality_summary$Fen_specialists[i] <- sum((row_data > 0) & (spec_values == 1), na.rm = TRUE)
-    locality_summary$Fen_tolerant[i] <- sum((row_data > 0) & (spec_values == 2), na.rm = TRUE) 
-    locality_summary$Generalists[i] <- sum((row_data > 0) & (spec_values == 3), na.rm = TRUE)
+    locality_summary$Tirfobionti[i] <- sum((row_data > 0) & (spec_values == 1), na.rm = TRUE)
+    locality_summary$Neustonicke_hygrofilni[i] <- sum((row_data > 0) & (spec_values == 2), na.rm = TRUE) 
+    locality_summary$Ostatni[i] <- sum((row_data > 0) & (spec_values == 3), na.rm = TRUE)
   }
   
   return(locality_summary)
