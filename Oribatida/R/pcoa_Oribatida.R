@@ -203,3 +203,4 @@ cat("• Gray = Sites and Unknown species\n")
 cat("\n📊 Methods:\n")
 cat("• Abundance data: Bray-Curtis dissimilarity with PCOA ordination\n")
 cat("• Presence-Absence data: Jaccard dissimilarity with PCOA ordination\n")
+

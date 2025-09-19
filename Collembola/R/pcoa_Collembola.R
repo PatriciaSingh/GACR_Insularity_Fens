@@ -1,4 +1,4 @@
-# Simple PCOA Analysis with Species Specialization
+# Diatoms PCOA Analysis with Species Specialization
 # Two analyses: Abundance (Bray-Curtis) + Presence-Absence (Jaccard)
 # Species colored by specialization level
 
@@ -8,12 +8,16 @@ library(ggplot2)
 library(ggrepel)
 library(readr)
 library(dplyr)
-
+getwd()
 # Set working directory and create results folder
-setwd("Collembola/data")
+setwd("Diatoms/data")
 if(!dir.exists("../results")) dir.create("../results")
 
-cat("=== Collembola PCOA WITH SPECIALIZATION ===\n")
+cat("=== Diatoms PCOA WITH SPECIALIZATION ===\n")
+
+# Load specialization data
+cat("Loading specialization data...\n")
+specialization_data <- read_csv("Diatoms_A_spring_Specializace.csv", show_col_types = FALSE)
 
 # Function to run PCOA analysis with specialization
 run_pcoa_specialization <- function(file_name, dataset_name, is_presence_absence = FALSE) {
@@ -22,15 +26,9 @@ run_pcoa_specialization <- function(file_name, dataset_name, is_presence_absence
   # Read data
   data <- read_csv(file_name, show_col_types = FALSE)
   
-  # Extract specialization row (second row)
-  specialization_row <- data[1, -1]  # Remove Locality column
-  
-  # Remove specialization row for PCOA analysis
-  community_data <- data[-1, ]
-  
   # Extract localities and species matrix
-  localities <- community_data[[1]]
-  species_matrix <- as.matrix(community_data[, -1])
+  localities <- data$Short_names
+  species_matrix <- as.matrix(data[, -1])  # Remove Short_names column
   rownames(species_matrix) <- localities
   
   # Replace NA with 0
@@ -39,6 +37,9 @@ run_pcoa_specialization <- function(file_name, dataset_name, is_presence_absence
   # Remove empty species and sites
   species_matrix <- species_matrix[, colSums(species_matrix) > 0]
   species_matrix <- species_matrix[rowSums(species_matrix) > 0, ]
+  
+  cat(sprintf("  Matrix dimensions: %d sites x %d species\n", 
+              nrow(species_matrix), ncol(species_matrix)))
   
   # Calculate dissimilarity matrix
   if (is_presence_absence) {
@@ -69,8 +70,7 @@ run_pcoa_specialization <- function(file_name, dataset_name, is_presence_absence
   site_df <- data.frame(
     Locality = rownames(site_scores),
     PCo1 = site_scores[, 1],
-    PCo2 = site_scores[, 2],
-    Site_Type = ifelse(grepl("_A$", rownames(site_scores)), "Pristine (A)", "Degraded (B)")
+    PCo2 = site_scores[, 2]
   )
   
   # Calculate species scores using weighted averages
@@ -79,25 +79,37 @@ run_pcoa_specialization <- function(file_name, dataset_name, is_presence_absence
   
   # Create species dataframe with specialization
   species_names <- rownames(species_scores)
-  spec_values <- as.numeric(specialization_row[match(species_names, names(specialization_row))])
   
+  # Match species with specialization data
   species_df <- data.frame(
     Species = species_names,
     PCo1 = species_scores[, 1],
-    PCo2 = species_scores[, 2],
-    Specialization = spec_values
+    PCo2 = species_scores[, 2]
   ) %>%
+    left_join(specialization_data %>% select(Short_names, Specializatio_by_words), 
+              by = c("Species" = "Short_names")) %>%
     mutate(
       Specialization_Level = case_when(
-        Specialization == 1 ~ "Tirfobionti (1)",
-        Specialization == 2 ~ "Neustonicke_hygrofilni (2)", 
-        Specialization == 3 ~ "Ostatni (3)",
-        is.na(Specialization) ~ "Unknown"
+        is.na(Specializatio_by_words) ~ "Unknown",
+        TRUE ~ Specializatio_by_words
       ),
-      Specialization_Level = factor(Specialization_Level, 
-                                    levels = c("Tirfobionti (1)", "Neustonicke_hygrofilni (2)", 
-                                               "Ostatni (3)", "Unknown"))
+      Specialization_Level = factor(Specialization_Level)
     )
+  
+  # Get unique specialization levels for color assignment
+  spec_levels <- levels(species_df$Specialization_Level)
+  cat("  Specialization levels found:", paste(spec_levels, collapse = ", "), "\n")
+  
+  # Create color palette
+  n_levels <- length(spec_levels)
+  if("Unknown" %in% spec_levels) {
+    # Assign gray to Unknown, distinct colors to others
+    colors <- rainbow(n_levels - 1, s = 0.7, v = 0.8)
+    color_palette <- setNames(c(colors, "gray60"), 
+                              c(setdiff(spec_levels, "Unknown"), "Unknown"))
+  } else {
+    color_palette <- setNames(rainbow(n_levels, s = 0.7, v = 0.8), spec_levels)
+  }
   
   # Create plot with specialization
   p <- ggplot() +
@@ -113,35 +125,28 @@ run_pcoa_specialization <- function(file_name, dataset_name, is_presence_absence
     # Species points colored by specialization
     geom_point(data = species_df, aes(x = PCo1, y = PCo2, color = Specialization_Level), 
                size = 2.5, alpha = 0.8) +
-    # Species labels with repelling (larger text)
+    # Species labels with repelling (smaller text to avoid overcrowding)
     geom_text_repel(data = species_df, aes(x = PCo1, y = PCo2, label = Species, color = Specialization_Level), 
-                    size = 2.5, fontface = "bold",
-                    box.padding = 0.4, point.padding = 0.3,
+                    size = 1.8, fontface = "bold",
+                    box.padding = 0.2, point.padding = 0.1,
                     segment.color = "gray80", segment.size = 0.2,
-                    max.overlaps = Inf) +
+                    max.overlaps = 20) +  # Limit overlaps to avoid overcrowding
     # Specialization colors
-    scale_color_manual(
-      values = c(
-        "Tirfobionti (1)" = "#81C784",      # Green
-        "Neustonicke_hygrofilni (2)" = "#FFB74D",         # Orange
-        "Ostatni (3)" = "#E57373",          # Red
-        "Unknown" = "gray60"                    # Gray
-      ),
-      name = "Specialization Level"
-    ) +
+    scale_color_manual(values = color_palette, name = "Specialization Level") +
     # Labels
     labs(
       title = paste("PCOA with Species Specialization:", dataset_name),
       subtitle = paste("Distance method:", distance_method, "| PCo1 =", percent_var[1], "% | PCo2 =", percent_var[2], "%"),
       x = paste("PCo1 (", percent_var[1], "%)"),
       y = paste("PCo2 (", percent_var[2], "%)"),
-      caption = "Gray = Localities | Colored = Species by specialization level"
+      caption = "Gray = Sites | Colored = Species by specialization level"
     ) +
     theme_minimal() +
     theme(
       plot.title = element_text(size = 14, face = "bold"),
       legend.position = "right",
-      legend.title = element_text(size = 11, face = "bold")
+      legend.title = element_text(size = 11, face = "bold"),
+      legend.text = element_text(size = 9)
     ) +
     guides(color = guide_legend(override.aes = list(size = 4)))
   
@@ -149,7 +154,7 @@ run_pcoa_specialization <- function(file_name, dataset_name, is_presence_absence
   tryCatch({
     method_suffix <- if(is_presence_absence) "jaccard" else "bray"
     plot_name <- paste0("../results/pcoa_", method_suffix, "_specialization_", gsub(" ", "_", tolower(dataset_name)), ".png")
-    ggsave(plot_name, p, width = 14, height = 10, dpi = 300)
+    ggsave(plot_name, p, width = 16, height = 12, dpi = 300)
     cat("  ✅ Plot saved:", plot_name, "\n")
   }, error = function(e) {
     cat("  ❌ SAVE ERROR:", e$message, "\n")
@@ -167,11 +172,11 @@ run_pcoa_specialization <- function(file_name, dataset_name, is_presence_absence
 results <- list()
 
 # 1. Abundance data (Bray-Curtis)
-results$abundance <- run_pcoa_specialization("Collembola_final_with_specialization.csv", 
+results$abundance <- run_pcoa_specialization("Diatoms_A_spring_final_with_short_names.csv", 
                                              "Abundance Data", is_presence_absence = FALSE)
 
 # 2. Presence-absence data (Jaccard)
-results$presence <- run_pcoa_specialization("Collembola_finalPA_with_specialization.csv", 
+results$presence <- run_pcoa_specialization("Diatoms_A_spring_final_PA_with_short_names.csv", 
                                             "Presence-Absence Data", is_presence_absence = TRUE)
 
 # Summary table
@@ -189,18 +194,33 @@ summary_df <- data.frame(
 )
 print(summary_df)
 
-cat("\n📁 Results saved to: Collembola/results/\n")
+# Save species data with specialization for further analysis
+cat("\nSaving species data with specialization...\n")
+write_csv(results$abundance$species, "../results/species_scores_abundance_with_specialization.csv")
+write_csv(results$presence$species, "../results/species_scores_presence_with_specialization.csv")
+write_csv(results$abundance$sites, "../results/site_scores_abundance.csv")
+write_csv(results$presence$sites, "../results/site_scores_presence.csv")
+
+cat("\n📁 Results saved to: Diatoms/results/\n")
 cat("Files created:\n")
 cat("• pcoa_bray_specialization_abundance_data.png\n")
 cat("• pcoa_jaccard_specialization_presence-absence_data.png\n")
+cat("• species_scores_abundance_with_specialization.csv\n")
+cat("• species_scores_presence_with_specialization.csv\n")
+cat("• site_scores_abundance.csv\n")
+cat("• site_scores_presence.csv\n")
 
 cat("\n🎨 Specialization colors:\n")
-cat("• Green = Tirfobionti (1)\n")
-cat("• Orange = Neustonicke_hygrofilni (2)\n")
-cat("• Red = Ostatni (3)\n")
+cat("• Colors automatically assigned to each specialization category\n")
 cat("• Gray = Sites and Unknown species\n")
 
 cat("\n📊 Methods:\n")
 cat("• Abundance data: Bray-Curtis dissimilarity with PCOA ordination\n")
 cat("• Presence-Absence data: Jaccard dissimilarity with PCOA ordination\n")
+cat("• Species specialization from separate file: Diatoms_A_spring_Specializace.csv\n")
+
+cat("\n🔍 Next steps:\n")
+cat("• Check the specialization summary to see the distribution of categories\n")
+cat("• Consider filtering rare species if plots are overcrowded\n")
+cat("• Use the CSV outputs for further statistical analysis\n")
 
