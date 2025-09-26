@@ -1,0 +1,6 @@
+"Response_Variable","Model_Type","N_Predictors","AIC","Deviance_Explained_Percent","Formula"
+"IslBryVas2","Interaction",3,198.868424580691,53.8568400012787,"IslBryVas2 ~ DNSS_std + pHadj_std + NIB5_std + NIB5_std:pHadj_std"
+"PlotBryVas2","Additive",1,143.856846628681,23.0088021014275,"PlotBryVas2 ~ pHadj_std"
+"IslBry2","Additive",2,161.527372272202,41.7445178219146,"IslBry2 ~ DNSS_std + NIB5_std"
+"IslVas2","Interaction",2,156.14630910063,48.4994334633616,"IslVas2 ~ pHadj_std + NIB5_std + NIB5_std:pHadj_std"
+"PlotVas2","Additive",1,109.565716666532,23.4059814503568,"PlotVas2 ~ pHadj_std"
