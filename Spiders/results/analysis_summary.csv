@@ -1,0 +1,14 @@
+Dataset,Analysis_Type,PCo1_Percent,PCo2_Percent,Total_Variance,N_Sites,N_Species
+Spider_combined_all_methods_PA,Presence-Absence,10.76,6.74,17.5,60,198
+Spider_combined_cerven_PA,Presence-Absence,9.16,5.87,15,60,144
+Spider_combined_kveten_PA,Presence-Absence,10.76,6.9,17.7,60,163
+Spider_combined_pasti_PA,Presence-Absence,12.23,8.69,20.9,60,126
+Spider_combined_smyk_PA,Presence-Absence,10.23,8.99,19.2,60,106
+Spider_pasti_cerven_final,Presence-Absence,8.49,8.16,16.6,53,95
+Spider_pasti_cerven_finalPA,Presence-Absence,8.49,8.16,16.6,53,95
+Spider_pasti_kveten_final,Presence-Absence,12.64,9.14,21.8,60,97
+Spider_pasti_kveten_finalPA,Presence-Absence,12.64,9.14,21.8,60,97
+Spider_smyk_cerven_final,Abundance,18.83,10.26,29.1,56,67
+Spider_smyk_cerven_finalPA,Presence-Absence,14.71,9.65,24.4,56,68
+Spider_smyk_kveten_final,Abundance,13.68,11.45,25.1,60,85
+Spider_smyk_kveten_finalPA,Presence-Absence,10.93,9.53,20.5,60,85
