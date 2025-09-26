@@ -1,0 +1,3 @@
+Dataset,PCo1_Eigenvalue,PCo1_Percent,PCo2_Eigenvalue,PCo2_Percent,Total_Variance
+Abundance (Bray-Curtis),4.242,19.87,3.546,16.61,36.5
+Presence-Absence (Jaccard),2.72,12.17,1.953,8.74,20.9
