@@ -1,0 +1,22 @@
+
+Call:
+glm(formula = formula_obj, family = gaussian(), data = data)
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)
+(Intercept) -0.073886   0.283820  -0.260    0.797
+WTDmed_std   0.033471   0.293634   0.114    0.910
+NND_std     -0.040374   0.307755  -0.131    0.897
+Age_std      0.009827   0.310166   0.032    0.975
+DNSS_std    -0.038505   0.307447  -0.125    0.901
+Area_std     0.004399   0.316808   0.014    0.989
+NIB5_std    -0.010591   0.325545  -0.033    0.974
+
+(Dispersion parameter for gaussian family taken to be 2.416611)
+
+    Null deviance: 55.698  on 29  degrees of freedom
+Residual deviance: 55.582  on 23  degrees of freedom
+AIC: 119.64
+
+Number of Fisher Scoring iterations: 2
+

@@ -5,14 +5,13 @@ library(ggplot2)
 library(broom)
 
 # Set working directory and create results folder
-setwd("C:/Users/patricia/PATA/SCIENCE/RESEARCH/3_INSULARITY_FENS/3_EXCEL_CSV")
-dir.create("GLM_Results", showWarnings = FALSE)
+setwd("C:/Users/patricia/PATA/SCIENCE/RESEARCH/3_INSULARITY_FENS/GACR_Insularity_Fens/1_Insularity_paper")
+dir.create("results/GLM_SpeRich_1_all_predictors", showWarnings = FALSE)
 
 # Load data
-data <- read.csv("Data_VIF_HamVer_CarCho_out.csv")
+data <- read.csv("data/Data_VIF_HamVer_CarCho_out.csv")
 
 # Transform variables for better model performance
-cat("Transforming variables based on ecological context...\n")
 data <- data %>%
   mutate(
     # Core environmental variables (original 6)
@@ -75,11 +74,6 @@ factors <- factors[sapply(factors, function(x) !all(is.na(data[[x]])))]
 
 # Original factor names for reference
 factors_original <- c("WTDmed", "NND", "Age", "DNSS", "Area", "pHadj", "NIB5")  # Update based on included variables
-
-cat("Variables included in analysis:\n")
-cat("Core factors:", paste(core_factors, collapse = ", "), "\n")
-cat("Landscape factors:", paste(available_landscape, collapse = ", "), "\n")
-cat("Total factors:", length(factors), "\n")
 
 # Initialize results storage
 full_model_results <- list()
@@ -301,7 +295,7 @@ if(length(variable_importance) > 0) {
       theme(axis.text.x = element_text(angle = 45, hjust = 1))
     
     # Save the plot
-    ggsave("GLM_Results/variable_importance_plot.png", importance_plot, 
+    ggsave("results/GLM_SpeRich_1_all_predictors/variable_importance_plot.png", importance_plot, 
            width = 14, height = 10, dpi = 300)
     
   } else {
@@ -351,60 +345,28 @@ transformation_summary <- data.frame(
   stringsAsFactors = FALSE
 )
 
-write.csv(transformation_summary, "GLM_Results/transformation_summary.csv", row.names = FALSE)
+write.csv(transformation_summary, "results/GLM_SpeRich_1_all_predictors/transformation_summary.csv", row.names = FALSE)
 
 # Save variable importance data
-write.csv(combined_importance, "GLM_Results/variable_importance_detailed.csv", row.names = FALSE)
-write.csv(most_influential_full, "GLM_Results/most_influential_full_models.csv", row.names = FALSE)
-write.csv(most_influential_residual, "GLM_Results/most_influential_residual_models.csv", row.names = FALSE)
+write.csv(combined_importance, "results/GLM_SpeRich_1_all_predictors/variable_importance_detailed.csv", row.names = FALSE)
+write.csv(most_influential_full, "results/GLM_SpeRich_1_all_predictors/most_influential_full_models.csv", row.names = FALSE)
+write.csv(most_influential_residual, "results/GLM_SpeRich_1_all_predictors/most_influential_residual_models.csv", row.names = FALSE)
 
 # Save model summaries
 for (response_var in response_vars) {
   # Full model summary
   capture.output(
     print(full_model_results[[response_var]]$summary),
-    file = paste0("GLM_Results/", response_var, "_full_model_summary.txt")
+    file = paste0("results/GLM_SpeRich_1_all_predictors/", response_var, "_full_model_summary.txt")
   )
   
   # Residual model summary
   capture.output(
     print(residual_model_results[[response_var]]$summary),
-    file = paste0("GLM_Results/", response_var, "_residual_model_summary.txt")
+    file = paste0("results/GLM_SpeRich_1_all_predictors/", response_var, "_residual_model_summary.txt")
   )
 }
 
-# Create a comprehensive summary report
-cat("Creating comprehensive summary report...\n")
-
-sink("GLM_Results/analysis_summary_report.txt")
-cat("GLM ANALYSIS SUMMARY REPORT\n")
-cat("===========================\n\n")
-
-cat("DATASET INFORMATION:\n")
-cat("- File: Data_VIF_HamVer_CarCho_out.csv\n")
-cat("- Number of localities:", nrow(data), "\n")
-cat("- Response variables:", paste(response_vars, collapse = ", "), "\n")
-cat("- Original factors:", paste(factors_original, collapse = ", "), "\n")
-cat("- Transformed factors used:", paste(factors, collapse = ", "), "\n")
-cat("- Transformations applied:\n")
-cat("  * DNSS (distance to species source): log(x+1) + standardized\n")
-cat("  * NND (nearest neighbor distance): log(x+1) + standardized\n") 
-cat("  * Area (patch area): log(x+1) + standardized\n")
-cat("  * Age (patch age): sqrt(x) + standardized\n")
-cat("  * pHadj (pH adjusted by Ca): standardized only (already log scale)\n")
-cat("  * WTDmed (water table depth): standardized only\n")
-cat("  * NIB5 (island count 5km): log(x+1) + standardized\n")
-cat("- Model families: Poisson for original data, Gaussian for residual analysis\n")
-cat("- Residual analysis: Effect of pHadj COMPLETELY REMOVED, then remaining factors analyzed\n")
-cat("- Residual model includes: WTDmed, NND, Age, DNSS, Area, NIB5 (NO pHadj)\n\n")
-
-cat("MOST INFLUENTIAL VARIABLES (Full Models):\n")
-print(most_influential_full)
-cat("\n")
-
-cat("MOST INFLUENTIAL VARIABLES (Residual Analysis - pHadj COMPLETELY EXCLUDED):\n")
-print(most_influential_residual)
-cat("\n")
 
 cat("VARIABLE IMPORTANCE RANKING (Average across all response variables):\n")
 avg_importance <- combined_importance %>%
@@ -540,7 +502,7 @@ if(length(interaction_summary) > 0) {
   all_interactions <- bind_rows(interaction_summary)
   
   # Save detailed results
-  write.csv(all_interactions, "GLM_Results/interaction_analysis_results.csv", row.names = FALSE)
+  write.csv(all_interactions, "results/GLM_SpeRich_1_all_predictors/interaction_analysis_results.csv", row.names = FALSE)
   
   # Summarize significant interactions
   significant_interactions <- all_interactions %>%
@@ -551,7 +513,7 @@ if(length(interaction_summary) > 0) {
     cat("\nSIGNIFICANT INTERACTIONS FOUND:\n")
     print(significant_interactions %>% select(Response, Interaction, Delta_AIC, p_value))
     
-    write.csv(significant_interactions, "GLM_Results/significant_interactions.csv", row.names = FALSE)
+    write.csv(significant_interactions, "results/GLM_SpeRich_1_all_predictors/significant_interactions.csv", row.names = FALSE)
     
     # Visualization of interaction effects
     interaction_plot <- ggplot(all_interactions, aes(x = reorder(Interaction, -Delta_AIC), 
@@ -569,7 +531,7 @@ if(length(interaction_summary) > 0) {
       theme_minimal() +
       theme(axis.text.x = element_text(angle = 45, hjust = 1))
     
-    ggsave("GLM_Results/interaction_analysis_plot.png", interaction_plot, 
+    ggsave("results/GLM_SpeRich_1_all_predictors/interaction_analysis_plot.png", interaction_plot, 
            width = 14, height = 10, dpi = 300)
     
     # Summary table of interaction patterns
@@ -584,7 +546,7 @@ if(length(interaction_summary) > 0) {
       ) %>%
       arrange(desc(N_significant), Mean_Delta_AIC)
     
-    write.csv(interaction_summary_table, "GLM_Results/interaction_summary_table.csv", row.names = FALSE)
+    write.csv(interaction_summary_table, "results/GLM_SpeRich_1_all_predictors/interaction_summary_table.csv", row.names = FALSE)
     
     cat("\nINTERACTION SUMMARY TABLE:\n")
     print(interaction_summary_table)
@@ -628,25 +590,5 @@ cat("\n" %+% "="*50 %+% "\n")
 cat("INTERACTION ANALYSIS COMPLETED\n")
 cat("="*50 %+% "\n")
 
-# Print completion message
-cat("\n" %+% "="*50 %+% "\n")
-cat("ANALYSIS COMPLETED SUCCESSFULLY!\n")
-cat("="*50 %+% "\n")
-cat("Results saved in 'GLM_Results' folder:\n")
-cat("- variable_importance_plot.png: Visualization of variable importance\n")
-cat("- variable_importance_detailed.csv: Detailed importance scores\n")
-cat("- most_influential_full_models.csv: Top variables for full models\n")
-cat("- most_influential_residual_models.csv: Top variables for residual analysis\n")
-cat("- interaction_analysis_results.csv: All interaction tests\n")
-cat("- significant_interactions.csv: Only significant interactions\n")
-cat("- interaction_analysis_plot.png: Interaction effects visualization\n")
-cat("- analysis_summary_report.txt: Comprehensive summary\n")
-cat("- Individual model summaries for each response variable\n")
-cat("="*50 %+% "\n")
 
-# Display quick summary
-cat("QUICK SUMMARY:\n")
-print(most_influential_full)
-cat("\nRESIDUAL ANALYSIS (pHadj excluded):\n")
-print(most_influential_residual)
 

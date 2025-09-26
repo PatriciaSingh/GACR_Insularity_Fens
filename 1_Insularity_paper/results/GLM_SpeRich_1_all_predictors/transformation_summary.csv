@@ -1,0 +1,8 @@
+"Variable","Description","Original_Min","Original_Max","Original_Range","Transformation","Rationale","Variable_Type"
+"WTDmed","Water table depth (cm)",0,24.25,24.25,"Standardized only","Linear depth measure","Chemical"
+"NND","Nearest neighbor distance (m)",11.30769,3108.08248,3096.77479,"Log + Standardized","Spatial distance (ecological standard)","Spatial"
+"Age","Patch age (years)",60,13469,13409,"Square root + Standardized","Temporal variable (moderate transformation)","Temporal"
+"DNSS","Distance to species source (m)",10,19700,19690,"Log + Standardized","Spatial distance (ecological standard)","Spatial"
+"Area","Patch area (m²)",1032,76109,75077,"Log + Standardized","Area variable (always log in ecology)","Spatial"
+"pHadj","pH adjusted by Ca (log scale)",3.4,6.8,3.4,"Standardized only (already log scale)","Already on logarithmic scale","Chemical"
+"NIB5","Number of islands in 5km buffer",5,59,54,"Log + Standardized","Count data (ecological standard)","Landscape"
